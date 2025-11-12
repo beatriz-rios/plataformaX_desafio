@@ -1,0 +1,219 @@
+/* --- Variáveis de Cores --- */
+:root {
+    --fundo-principal: #1f2833; /* Preto Azulado Escuro */
+    --fundo-secundario: #2c3a47; /* Azul Escuro */
+    --texto-claro: #c5c6c7; /* Cinza Claro */
+    --destaque-ciano: #66fcf1; /* Ciano Brilhante */
+    --destaque-roxo: #45a29e; /* Azul Petróleo/Ciano Escuro */
+    --sombra-clara: rgba(102, 252, 241, 0.1);
+    --sombra-escura: rgba(0, 0, 0, 0.5);
+    --borda-fina: 1px solid var(--destaque-roxo);
+}
+
+/* --- Estilo Base e Reset Básico --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fundo-principal);
+    color: var(--texto-claro);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: var(--destaque-ciano);
+    border-bottom: 2px solid var(--destaque-roxo);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px var(--sombra-clara);
+}
+
+/* --- Navegação (Menu) --- */
+nav {
+    width: 100%;
+    max-width: 900px;
+    background-color: var(--fundo-secundario);
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--sombra-escura);
+    margin-bottom: 40px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--texto-claro);
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s, background-color 0.3s, border-radius 0.3s;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: var(--fundo-principal);
+    background-color: var(--destaque-ciano);
+    box-shadow: 0 0 10px var(--destaque-ciano);
+}
+
+/* --- Formulários (Cadastro, Alteração, Exclusão) --- */
+form {
+    background-color: var(--fundo-secundario);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--sombra-escura);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os campos */
+}
+
+label {
+    color: var(--destaque-ciano);
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"], /* Note: 'e-mail' in HTML should be 'email' */
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: var(--borda-fina);
+    border-radius: 5px;
+    background-color: var(--fundo-principal);
+    color: var(--texto-claro);
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: var(--destaque-ciano);
+    outline: none;
+    box-shadow: 0 0 8px var(--sombra-clara);
+}
+
+input[type="submit"] {
+    background-color: var(--destaque-roxo);
+    color: var(--fundo-principal);
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--destaque-ciano);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--sombra-clara);
+}
+
+/* --- Mensagens de Status (PHP Output) --- */
+.mensagem, .message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.success { /* Para "Comando executado com sucesso" */
+    background-color: #38761d; /* Verde Escuro */
+    color: #ccffcc;
+    border: 1px solid #6aa84f;
+}
+
+.erro, .error { /* Para "Falha na conexão" ou "Erro" */
+    background-color: #a61c00; /* Vermelho Escuro */
+    color: #ffcccc;
+    border: 1px solid #cc4125;
+}
+
+/* --- Tabela de Consulta (consulta.php) --- */
+table {
+    width: 95%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: var(--fundo-secundario);
+    box-shadow: 0 4px 15px var(--sombra-escura);
+    border-radius: 10px;
+    overflow: hidden; /* Para garantir que bordas e cantos se apliquem corretamente */
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: var(--borda-fina);
+    transition: background-color 0.3s;
+}
+
+th {
+    background-color: var(--destaque-roxo); /* Cabeçalho mais escuro */
+    color: var(--fundo-principal);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #3b4e5f; /* Linhas pares levemente mais claras */
+}
+
+tr:hover {
+    background-color: #4b6278; /* Destaque ao passar o mouse */
+}
+
+td {
+    color: var(--texto-claro);
+    border: none; /* Remove a borda padrão do PHP/HTML */
+}
+
+/* Estilo para a tag 'table' do consulta.php */
+/* Removendo o estilo inline, mas mantendo a estética */
+/* O PHP em consulta.php ainda está definindo estilos inline e atributos como border='3', cellpadding='8', etc. */
+/* O CSS acima (table, th, td) tentará sobrescrever o máximo possível, mas o HTML/PHP deve ser ajustado para um CSS puro. */
+
+/* Ajuste específico para consulta.php devido ao estilo inline: */
+/* Ignora as bordas e cores definidas pelo PHP para usar o CSS */
+.consulta-body {
+    background-color: var(--fundo-principal);
+}
+
+/* Sobrescreve a tag <style> injetada no consulta.php */
+#tabela, table[border='3'] {
+    border: none !important;
+    background-color: var(--fundo-secundario) !important;
+    color: var(--texto-claro) !important;
+    width: 100% !important;
+    border-radius: 10px !important;
+}
+
+td, th, table[border='3'] td, table[border='3'] th {
+    border: none !important; 
+    border-bottom: var(--borda-fina) !important;
+}

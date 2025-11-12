@@ -1,0 +1,238 @@
+/* --- Variáveis de Cores (Paleta Fria) --- */
+:root {
+    --fundo-principal: #1f2833; /* Preto Azulado Escuro */
+    --fundo-secundario: #2c3a47; /* Azul Escuro */
+    --texto-claro: #c5c6c7; /* Cinza Claro */
+    --destaque-ciano: #66fcf1; /* Ciano Brilhante */
+    --destaque-roxo: #45a29e; /* Azul Petróleo/Ciano Escuro (Usado em Borda/Botão) */
+    --sombra-clara: rgba(102, 252, 241, 0.1);
+    --sombra-escura: rgba(0, 0, 0, 0.5);
+    --borda-fina: 1px solid var(--destaque-roxo);
+}
+
+/* --- Estilo Base e Reset Básico --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fundo-principal); /* Fundo Escuro */
+    color: var(--texto-claro);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Ajuste para Conteúdo (Body) */
+    padding-left: 20px; /* Mantém o padding original */
+    padding-top: 20px;
+}
+
+h1 {
+    color: var(--destaque-ciano);
+    border-bottom: 2px solid var(--destaque-roxo);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px var(--sombra-clara);
+}
+
+/* ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------ */
+
+/* --- Navegação (Menu) - CENTRALIZADO DINAMICAMENTE --- */
+
+nav {
+    /* Posição Fixa e Centralização Dinâmica (mantida) */
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 1000;
+    
+    /* Largura e Aparência (AUMENTADA) */
+    width: 350px; /* Definindo uma largura maior e fixa para o bloco */
+    max-width: 90vw; /* Limita a largura em telas muito pequenas */
+    background-color: var(--fundo-secundario);
+    padding: 30px 40px; /* AUMENTADO o padding interno para aumentar o bloco */
+    border-radius: 15px; 
+    box-shadow: 0 8px 20px var(--sombra-escura);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0; 
+}
+
+nav ul li {
+    margin: 10px 0; /* AUMENTADO o espaçamento vertical entre os links */
+    width: 100%;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--texto-claro);
+    padding: 30px 35px; /* AUMENTADO o padding para fazer o link parecer maior */
+    display: block;
+    transition: color 0.3s, background-color 0.3s, border-radius 0.3s;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1em; /* AUMENTADO o tamanho da fonte */
+}
+
+/* Mantém o Hover com as cores definidas */
+nav ul li a:hover {
+    color: var(--fundo-principal);
+    background-color: var(--destaque-ciano);
+    box-shadow: 0 0 10px var(--destaque-ciano);
+}
+
+/* ------------------------------------------------------------------ */
+
+/* --- Estilos para Formulários e Botões (Mantidos) --- */
+form {
+    background-color: var(--fundo-secundario);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--sombra-escura);
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    color: var(--destaque-ciano);
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"], 
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: var(--borda-fina);
+    border-radius: 5px;
+    background-color: var(--fundo-principal);
+    color: var(--texto-claro);
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: var(--destaque-ciano);
+    outline: none;
+    box-shadow: 0 0 8px var(--sombra-clara);
+}
+
+input[type="submit"] {
+    background-color: var(--destaque-roxo);
+    color: var(--fundo-principal);
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--destaque-ciano);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px var(--sombra-clara);
+}
+
+/* --- Mensagens de Status (PHP Output) --- */
+.mensagem, .message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.success { 
+    background-color: #38761d; 
+    color: #ccffcc;
+    border: 1px solid #6aa84f;
+}
+
+.erro, .error { 
+    background-color: #a61c00; 
+    color: #ffcccc;
+    border: 1px solid #cc4125;
+}
+
+/* --- Tabela de Consulta (consulta.php) --- */
+table {
+    width: 95%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin-top: 30px;
+    background-color: var(--fundo-secundario);
+    box-shadow: 0 4px 15px var(--sombra-escura);
+    border-radius: 10px;
+    overflow: hidden; 
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: var(--borda-fina);
+    transition: background-color 0.3s;
+}
+
+th {
+    background-color: var(--destaque-roxo); 
+    color: var(--fundo-principal);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #3b4e5f; 
+}
+
+tr:hover {
+    background-color: #4b6278; 
+}
+
+td {
+    color: var(--texto-claro);
+    border: none;
+}
+
+#tabela, table[border='3'] {
+    border: none !important;
+    background-color: var(--fundo-secundario) !important;
+    color: var(--texto-claro) !important;
+    width: 100% !important;
+    border-radius: 10px !important;
+}
+
+td, th, table[border='3'] td, table[border='3'] th {
+    border: none !important; 
+    border-bottom: var(--borda-fina) !important;
+}
