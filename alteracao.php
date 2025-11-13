@@ -50,7 +50,7 @@
         <input type="number" name="id" placeholder="Digite o ID">
     </div>
 
-    <input type="submit" VALUE="Cadastrar">
+    <input type="submit" VALUE="Alterar">
 
     </div>
 
@@ -101,7 +101,7 @@
             senhaparaUsuario = '$senhaBanco_usu',
             senha ='$senha'
 
-WHERE idusuario = '$id'";
+         WHERE idusuario = '$id'";
 
 
    if(mysqli_query($conn, $sql)){

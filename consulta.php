@@ -33,7 +33,7 @@ $resultado = mysqli_query($conn,$sql) or die("Erro ao retornar dados");
 
 
 
-$registros = mysqli_fetch_assoc($resultado);
+//$registros = mysqli_fetch_assoc($resultado);
 
 echo'<style>
      #tabela{  
@@ -77,17 +77,7 @@ while($linha = mysqli_fetch_assoc($resultado)){
     
 
 }
-while($linha = mysqli_fetch_assoc($resultado)){
-    echo $linha['idusuario'];
-    echo $linha['nome'];
-    echo $linha['cpf'];
-    echo $linha['email'];
-    echo $linha['telefone'];
-    echo $linha['nomeparaUsuario'];
-    echo $linha['senhaparaUsuario'];
-    echo $linha['senha'];
-   
-}
+
   
 if(mysqli_query($conn, $sql)){
     echo"<br>";

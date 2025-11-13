@@ -59,8 +59,7 @@
        $email = $_POST["email"];
        $phone = $_POST["phone"];
        $senha = $_POST["senha"];
-       //$nomeUsu = $_POST["nomeUsu"];
-       //$senhaUsu = $_POST["senhaUsu"];
+  
         
 
 
@@ -71,7 +70,7 @@
 
 
  //Remove espaços em branco do nome para embaralhar apenas os caracteres
-        $nomeSemEspacos = str_replace(' ', '', $nome);
+        $nomeSemEspacos = str_replace('', '', $nome);
 
        // 2. Embaralha a string para 'nomeBanco_usu'
         $nomeBanco_usu = str_shuffle($nomeSemEspacos);
