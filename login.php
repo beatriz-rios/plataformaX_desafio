@@ -33,7 +33,7 @@
         <input type="password" name="senha" placeholder="Digite sua senha" required>
     </div>
 
-    <input type="submit" VALUE="Cadastrar">
+    <input type="submit" VALUE="Login">
 
     </div>
     </form>
@@ -78,10 +78,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Redireciona para o menu da aplicação
           
             header("Location: menu.php");
-            echo(alert('foi logado com sucesso!'));
             exit();
         } else {
-            echo "<p class='mensagem erro'>Senha da aplicação incorreta.</p>";
+            echo "<p class='mensagem-erro'>Email ou Senha incorreta.</p>";
         }
     } else {
         echo "<p class='mensagem erro'>Usuário não encontrado.</p>";
