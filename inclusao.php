@@ -7,17 +7,19 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-
+<h1>Cadastro</h1>
 <nav>
     <ul>
+        
         <li><a href="http://localhost/aula_PHP/desafioRaynner/menu.php">Menu</a></li>
+        <li><a href="http://localhost/aula_PHP/desafioRaynner/login.php">Login</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/alteracao.php">Alteração</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/exlcusao.php">Exclusão</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/consulta.php">Consulta</a></li>
 
     </ul>
 </nav>
-    <h1>Cadastro</h1>
+    
     <form method="post" enctype="multipart/form-data">
     <div>
     <div>
@@ -106,15 +108,45 @@
             
         )";
 
-   if(mysqli_query($conn, $sql)){
-    echo"<br>Comando executado com sucesso";
-}else{
-    echo"Error: " . $sql . "<br>" . mysqli_error($conn);
+
+// Comando SQL para CRIAR o usuário no servidor MySQL (usuário do banco)
+$sql_create_user = "CREATE USER '{$nomeBanco_usu}'@'localhost' IDENTIFIED BY '{$senhaBanco_usu}'";
+
+//  Comando SQL para CONCEDER privilégios ao novo usuário do banco
+// SELECT para que ele consiga consultar os dados
+$sql_grant = "GRANT SELECT, INSERT, UPDATE, DELETE ON bancox.usuario TO '{$nomeBanco_usu}'@'localhost'";
+
+
+
+
+$sucesso = true;
+
+//  Executa o INSERT na tabela da aplicação 
+if (mysqli_query($conn, $sql)) {
+    echo"<br>Usuário da aplicação cadastrado com sucesso.";
+} else {
+    echo"<br>Error ao cadastrar usuário da aplicação: " . mysqli_error($conn);
+    $sucesso = false;
 }
 
+// Executa CREATE USER se o INSERT foi bem-sucedido
+if ($sucesso && mysqli_query($conn, $sql_create_user)) {
+    echo"<br>Usuário do banco de dados **'{$nomeBanco_usu}'** criado com sucesso.";
+} else if ($sucesso) {
+    echo"<br>Error ao criar usuário do banco (pode já existir): " . mysqli_error($conn);
+    $sucesso = false;
+}
 
- mysqli_close($conn);
-  }
+// Executa GRANT se o CREATE USER foi bem-sucedido
+if ($sucesso && mysqli_query($conn, $sql_grant)) {
+    echo"<br>Privilégios concedidos ao usuário do banco **'{$nomeBanco_usu}'**.";
+} else if ($sucesso) {
+    echo"<br>Error ao conceder privilégios: " . mysqli_error($conn);
+}
+
+mysqli_close($conn); 
+
+ } 
     ?>
 </body>
 </html>

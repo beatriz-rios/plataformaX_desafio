@@ -12,6 +12,7 @@
     <ul>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/menu.php">Menu</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/inclusao.php">Inclusão</a></li>
+        <li><a href="http://localhost/aula_PHP/desafioRaynner/login.php">Login</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/exlcusao.php">Exclusão</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/consulta.php">Consulta</a></li>
 
@@ -21,17 +22,17 @@
 <form method="post" enctype="multipart/form-data">
     <div>
     <div>
-        <label for="nome">Nome:</label><br>
+        <label for="nome">Nome:</label>
         <input type="text" name="nome" placeholder="Digite seu nome completo">
     </div>
     <div>
 
-    <label for="cpf">CPF:</label><br>
+    <label for="cpf">CPF:</label>
     <input type="number" name="cpf" placeholder="Digite seu CPF">
     </div>
 
     <div>
-        <label for="email">E-mail:</label><br>
+        <label for="email">E-mail:</label>
         <input type="email" name="email" placeholder="Digite seu E-mail">
     </div>
 
@@ -46,7 +47,7 @@
     </div>
 
     <div>
-        <label for="id"></label>
+        <label for="id">ID:</label>
         <input type="number" name="id" placeholder="Digite o ID">
     </div>
 

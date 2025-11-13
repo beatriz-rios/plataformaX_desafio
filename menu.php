@@ -11,6 +11,7 @@
     <nav>
     <ul>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/inclusao.php">Inclusão</a></li>
+        <li><a href="http://localhost/aula_PHP/desafioRaynner/login.php">Login</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/alteracao.php">Alteração</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/exlcusao.php">Exclusão</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/consulta.php">Consulta</a></li>

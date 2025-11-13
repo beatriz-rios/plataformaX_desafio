@@ -12,6 +12,7 @@
     <ul>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/menu.php">Menu</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/inclusao.php">Inclusão</a></li>
+        <li><a href="http://localhost/aula_PHP/desafioRaynner/login.php">Login</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/alteracao.php">Alteração</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/consulta.php">Consulta</a></li>
 
@@ -43,6 +44,27 @@
       }
 
       echo "<div class='message'>Conectado com sucesso.</div>";
+
+$sql_select_user = "SELECT nomeparaUsuario FROM usuario WHERE idusuario = '$idcli'";
+$resultado = mysqli_query($conn, $sql_select_user);
+$linha = mysqli_fetch_assoc($resultado);
+
+if ($linha) {
+    $nome_banco_excluir = $linha['nomeparaUsuario'];
+    
+    // 2. Excluir o usuário do banco de dados (DROP USER)
+    $sql_drop = "DROP USER IF EXISTS '{$nome_banco_excluir}'@'localhost'";
+    
+    if (mysqli_query($conn, $sql_drop)) {
+        echo "<div class='message success'>Usuário do banco **'{$nome_banco_excluir}'** excluído com sucesso.</div>";
+    } else {
+        echo "<div class='message error'>Erro ao excluir usuário do banco: " . mysqli_error($conn) . "</div>";
+    }
+
+} else {
+    echo "<div class='message error'>Usuário não encontrado na aplicação.</div>";
+}
+
 
       $sql = "DELETE FROM usuario WHERE idusuario = '$idcli'";
 

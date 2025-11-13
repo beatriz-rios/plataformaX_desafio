@@ -12,6 +12,7 @@
     <ul> 
         <li><a href="http://localhost/aula_PHP/desafioRaynner/menu.php">Menu</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/inclusao.php">Inclusão</a></li>
+        <li><a href="http://localhost/aula_PHP/desafioRaynner/login.php">Login</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/alteracao.php">Alteração</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/exlcusao.php">Exclusão</a></li>
 
@@ -58,8 +59,6 @@ echo"<table border='3' cellpadding='8' cellspacing='0'>";
         echo'<th> CPF </td>';
         echo'<th> E-mail </td>';
         echo'<th> Telefone </td>';
-        echo'<th> Nome p/ Usuário </td>';
-        echo'<th> Senha p/ Usuário</td>';
         echo'<th> Senha </td>';
         echo'</tr>';
 
@@ -71,8 +70,6 @@ while($linha = mysqli_fetch_assoc($resultado)){
     echo'<td>' . $linha['cpf'] .'</td>';
     echo'<td>' . $linha['email'] .'</td>';
     echo'<td>' . $linha['telefone'] .'</td>';
-    echo'<td>' . $linha['nomeparaUsuario'] .'</td>';
-    echo'<td>' . $linha['senhaparaUsuario'] .'</td>';
     echo'<td>' . $linha['senha'] .'</td></tr>';
     
 
