@@ -11,6 +11,7 @@
 <nav>
     <ul>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/menu.php">Menu</a></li>
+        <li><a href="http://localhost/aula_PHP/desafioRaynner/inclusao.php">Inclusão</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/alteracao.php">Alteração</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/exlcusao.php">Exclusão</a></li>
         <li><a href="http://localhost/aula_PHP/desafioRaynner/consulta.php">Consulta</a></li>
@@ -46,11 +47,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $servername = "localhost";
     $database = "bancox";
-    $username = "root";
-    $password = "";
+     
 
     
-
+    // validar o login, use o usuário 'root' (administrador)
+    // para buscar as credenciais do usuário na tabela 'usuario'.
+    $username_admin = "root";
+    $password_admin = "";
 
     $conn_admin = mysqli_connect($servername, $username_admin, $password_admin, $database);
 
@@ -73,7 +76,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['logado'] = true;
 
             // Redireciona para o menu da aplicação
+          
             header("Location: menu.php");
+            echo(alert('foi logado com sucesso!'));
             exit();
         } else {
             echo "<p class='mensagem erro'>Senha da aplicação incorreta.</p>";

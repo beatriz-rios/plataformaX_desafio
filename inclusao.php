@@ -117,8 +117,6 @@ $sql_create_user = "CREATE USER '{$nomeBanco_usu}'@'localhost' IDENTIFIED BY '{$
 $sql_grant = "GRANT SELECT, INSERT, UPDATE, DELETE ON bancox.usuario TO '{$nomeBanco_usu}'@'localhost'";
 
 
-
-
 $sucesso = true;
 
 //  Executa o INSERT na tabela da aplicação 
