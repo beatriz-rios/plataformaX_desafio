@@ -149,6 +149,8 @@ input[type="submit"]:hover {
 }
 
 .erro, .error { /* Para "Falha na conexão" ou "Erro" */
+    justify-content: left;
+    text-align: left;
     background-color: #a61c00; /* Vermelho Escuro */
     color: #ffcccc;
     border: 1px solid #cc4125;

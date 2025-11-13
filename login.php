@@ -80,10 +80,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: menu.php");
             exit();
         } else {
-            echo "<p class='mensagem-erro'>Email ou Senha incorreta.</p>";
+            echo "<p class='mensagem error'>Email ou Senha incorreta.</p>";
         }
     } else {
-        echo "<p class='mensagem erro'>Usuário não encontrado.</p>";
+        echo "<p class='mensagem error'>Usuário não encontrado.</p>";
     }
     
     mysqli_close($conn_admin);
